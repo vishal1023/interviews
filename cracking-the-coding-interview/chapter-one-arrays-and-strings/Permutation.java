@@ -14,12 +14,17 @@ public class Permutation {
 		}
 
 		for(int i = 0; i < t.length(); i++) {
-			int c = (int)t.charAt(i);
+			int c = t.charAt(i);
 			if(--letters[c] < 0) {
 				return false;
 			}
 		}
 
 		return true;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("permutation(\"asdf\", \"sdfa\") = " + new Permutation().permutation("asdf", "sdfa"));
+		System.out.println("permutation(\"asdf\", \"sdfa\") = " + new Permutation().permutation("asdffc", "sdffab"));
 	}
 }

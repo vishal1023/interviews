@@ -9,7 +9,7 @@
 // Follow up: What if you are given k 1d vectors? How well can your code be extended to such cases?
 
 /**
- * Your ZigzagIterator object will be instantiated and called as such: 
+ * Your ZigzagIterator object will be instantiated and called as such:
  * ZigzagIterator i = new ZigzagIterator(v1, v2);
  * while (i.hasNext()) v[f()] = i.next();
  */
@@ -30,7 +30,7 @@ public class ZigZagIterator {
             i = j;
             j = temp;
         }
-        
+
         return j.next();
     }
 

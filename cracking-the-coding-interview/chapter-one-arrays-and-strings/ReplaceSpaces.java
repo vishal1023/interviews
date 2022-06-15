@@ -3,6 +3,8 @@
 // are given the "true" length of the string. (Note: if implementing in Java, please use a characters
 // array so that you can perform this operation in place)
 
+import java.util.Arrays;
+
 public class ReplaceSpaces {
 	public void replaceSpaces(char[] str, int length) {
 		int spaceCount = 0, newLength;
@@ -26,5 +28,16 @@ public class ReplaceSpaces {
 				newLength = newLength - 1;
 			}
 		}
+	}
+
+	public static void main(String[] args) {
+		char[] chars = new char[7];
+		chars[0] = 'a';
+		chars[1] = 'b';
+		chars[2] = ' ';
+		chars[3] = 'c';
+		System.out.println("inputString before replacing the spaces = " + Arrays.toString(chars));
+		new ReplaceSpaces().replaceSpaces(chars, 4);
+		System.out.println("after replacing Spaces = " + Arrays.toString(chars));
 	}
 }

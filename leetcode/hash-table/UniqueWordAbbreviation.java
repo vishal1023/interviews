@@ -14,32 +14,32 @@
 // d) l|ocalizatio|n          --> l10n
 // Assume you have a dictionary and given a word, find whether its abbreviation is unique in the dictionary. A word's abbreviation is unique if no other word from the dictionary has the same abbreviation.
 
-// Example: 
+// Example:
 // Given dictionary = [ "deer", "door", "cake", "card" ]
 
-// isUnique("dear") -> 
+// isUnique("dear") ->
 // false
 
-// isUnique("cart") -> 
+// isUnique("cart") ->
 // true
 
-// isUnique("cane") -> 
+// isUnique("cane") ->
 // false
 
-// isUnique("make") -> 
+// isUnique("make") ->
 // true
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class UniqueWordAbbreviation {
     HashMap<String, String> map;
 
-    public ValidWordAbbr(String[] dictionary) {
+    public void ValidWordAbbr(String[] dictionary) {
         this.map = new HashMap<String, String>();
-        
+
         for(String word : dictionary) {
             String key = getKey(word);
-            
+
             if(map.containsKey(key)) {
                 if(!map.get(key).equals(word)) {
                     map.put(key, "");
@@ -53,12 +53,12 @@ public class UniqueWordAbbreviation {
     public boolean isUnique(String word) {
         return !map.containsKey(getKey(word))||map.get(getKey(word)).equals(word);
     }
-    
+
     public String getKey(String word) {
         if(word.length() <= 2) {
             return word;
         }
-        
+
         return word.charAt(0) + Integer.toString(word.length() - 2) + word.charAt(word.length() - 1);
     }
 }
